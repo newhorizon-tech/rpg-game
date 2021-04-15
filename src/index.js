@@ -1,4 +1,9 @@
 import Phaser from 'phaser'
+import {test} from './add'
+
+import {SimpleScene} from './scenes/scene-1'
+
+test();
 
 var config = {
     type: Phaser.AUTO,
@@ -16,7 +21,14 @@ var config = {
     }
 };
 
-var game = new Phaser.Game(config);
+var config2 = {
+    width: 680,
+    height: 400,
+    scene: SimpleScene
+}
+
+
+var game = new Phaser.Game(config2);
 
 function preload ()
 {
