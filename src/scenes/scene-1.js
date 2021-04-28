@@ -1,10 +1,17 @@
 export class Scene1 extends Phaser.Scene {
-  preload() {
-    this.load.image('boat','assets/boat.jpg');
+  constructor() {
+    super("Scene1");
   }
-  create() {
-    this.add.text(100, 100, 'Scene One!', { fill: '#0f0' });
-    this.add.image(400, 300, 'boat');
 
+  preload() {
+    this.load.image('boat', 'assets/boat.jpg');
+  }
+
+  create() {
+    this.add.text(100, 100, 'Scene One!', {
+      fill: '#0f0'
+    });
+    this.add.image(400, 300, 'boat');
+    this.scene.start("Scene2")
   }
 }
