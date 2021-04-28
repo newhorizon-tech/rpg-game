@@ -1,7 +1,4 @@
 export class Scene1 extends Phaser.Scene {
-  const sleep = (ms) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
 
   constructor() {
     super("Scene1");
@@ -17,8 +14,8 @@ export class Scene1 extends Phaser.Scene {
       fill: '#0f0'
     });
     this.add.image(400, 300, 'boat');
-    await sleep(8000);
-    
+    await new Promise(r => setTimeout(r, 8000));
+
     this.scene.start("Scene2")
   }
 }
